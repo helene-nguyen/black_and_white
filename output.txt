@@ -1,0 +1,25 @@
+C:\Users\Gamer\Desktop\folder-structure-node\project
+├── front
+|  ├── public
+|  |  ├── css
+|  |  ├── images
+|  |  └── script
+|  └── views
+|     ├── pages
+|     └── partials
+├── index.js
+├── package-lock.json
+├── package.json
+├── README.md
+├── server
+|  ├── controller
+|  |  └── main.controller.js
+|  ├── data
+|  ├── error.js
+|  ├── router.js
+|  └── test.js
+└── __docs
+
+directory: 114 file: 362
+
+ignored: directory (6), file (1)

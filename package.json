@@ -1,0 +1,26 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "empty files to start",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "be_strong": "\"Many times what we perceive as an error or failure is actually a gift and eventually we find that lessons learned from discouraging experience prove to be of great worth. - R.E.G.",
+    "db_yumi": "psql -U yumi -d yumi",
+    "db_reset": "psql -U yumi -d yumi -f ./data/create_db.sql"
+  },
+  "keywords": [],
+  "author": "yumicode",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cli-color": "^2.0.2",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "pg": "^8.7.3"
+  }
+}

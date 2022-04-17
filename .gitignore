@@ -1,0 +1,5 @@
+###IGNORE THESE FILES
+DOCS
+node_modules
+.eslintrc
+.env

@@ -1,0 +1,9 @@
+<nav class="<%= namePage %>">
+    <ul class="<%= namePage %> ">
+        <% navElements.forEach(navElement => { %>
+        <li class="<%= namePage %> ">
+            <a href="/<%= navElement.name  %> " class="nav <%= navElement.name  %>"><%= navElement.title %></a>
+        </li>
+        <% }) %>
+    </ul>
+</nav>
