@@ -1,6 +1,6 @@
 /**MAIN CONTAINER**/
 
-form#auth-form {
+form#signin-form {
     color: var(--pale-white);
     display: flex;
     flex-direction: column;
@@ -10,13 +10,14 @@ form#auth-form {
     width: 20em;
 }
 
-legend.auth {
+legend.signin {
     text-align: center;
     margin-bottom: 1em;
     font-size: 2em;
+    
 }
 
-label.auth {
+label {
     width: 85%;
 }
 
@@ -34,7 +35,7 @@ btn.sign-in {
 
 @media screen and (min-width:768px)  {
 
-    form#auth-form {
+    form#signin-form {
         font-size: 1em;
         margin: 1em 0 1em;
         padding: 2em 2em 1em;
@@ -56,7 +57,7 @@ btn.sign-in {
 }
 
 @media screen and (max-width: 768px) {
-    form#auth-form {
+    form#signin-form {
         font-size: 1em;
         margin: 1em 0 1em;
         padding: 2em 3em;

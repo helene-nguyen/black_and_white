@@ -12,7 +12,7 @@
     "db_reset": "psql -U yumi -d yumi -f ./data/create_db.sql"
   },
   "keywords": [],
-  "author": "yumicode",
+  "signinor": "yumicode",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",

@@ -1,12 +1,21 @@
 //!connect to DB
-const {
-    password
-} = require('pg/lib/defaults');
 const client = require('../database/db');
 
-const TABLE_NAME = "navigation";
+const TABLE_NAME = "users";
 
-const authDatamapper = {
+const signinDatamapper = {
+    async getAllInputNames(index) {
+
+        const sql = {
+            text: `SELECT * 
+            FROM ${TABLE_NAME}`
+        };
+        const result = await client.query(sql);
+        console.log(result.fields[index].name);
+        //TODO Try to have the array with only column names
+
+        return result.fields;
+    },
 
     async addUser(userData) {
 
@@ -26,7 +35,7 @@ const authDatamapper = {
             )
             VALUES ($1, $2, $3, $4) //! Protect DB
             `,
-            values: [ 
+            values: [
                 firstName,
                 lastName,
                 pseudo,
@@ -40,4 +49,4 @@ const authDatamapper = {
     }
 }
 
-module.exports = authDatamapper;
+module.exports = signinDatamapper;

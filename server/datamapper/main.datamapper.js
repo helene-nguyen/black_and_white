@@ -6,15 +6,20 @@ const TABLE_NAME = "navigation";
 const mainDatamapper = {
 
     async findNavElements() {
-        const result = await client.query(`SELECT * FROM ${TABLE_NAME}`);
+        const sql = {
+            text: `SELECT * 
+            FROM ${TABLE_NAME}`
+        }
+        const result = await client.query(sql);
 
         return result.rows;
     },
     async findOneNavElement(name) {
         const sql = {
-            text: `SELECT * FROM ${TABLE_NAME} WHERE "name" = ${name}`
+            text: `SELECT * 
+            FROM ${TABLE_NAME} 
+            WHERE "name" = ${name}`
         };
-
         const result = await client.query(sql);
 
         return result.rows;

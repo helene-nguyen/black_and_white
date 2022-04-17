@@ -58,7 +58,7 @@ a {
 
 .bg-glass.about,
 .bg-glass.contact,
-.bg-glass.auth,
+.bg-glass.signin,
 .bg-glass.history {
     width: 50%;
     height: 80vh;
@@ -89,7 +89,7 @@ header {
 
 .title.about,
 .title.contact,
-.title.auth,
+.title.signin,
 .title.history {
     font-size: 6em;
     font-weight: 400;
@@ -114,7 +114,7 @@ header {
 
 .theme.contact,
 .theme.about,
-.theme.auth,
+.theme.signin,
 .theme.history {
     font-size: 2em;
     position: relative;
@@ -151,7 +151,7 @@ ul.home {
 
 ul.about,
 ul.contact,
-ul.auth,
+ul.signin,
 ul.history {
     font-size: 2em;
 }
@@ -227,8 +227,9 @@ button {
 /****MEDIA QUERIES****/
 /*********************/
 
+/*  */
 
-@media screen and (min-width:768px) {
+@media screen and (max-width:1024px) and (min-width:768px) {
 
     /*************HOME**********/
     /*TITLE*/
@@ -268,7 +269,7 @@ button {
     /*MAIN CONTAINER*/
     .bg-glass.about,
     .bg-glass.contact,
-    .bg-glass.auth,
+    .bg-glass.signin,
     .bg-glass.history {
         width: 90%;
         height: 90vh;
@@ -277,7 +278,7 @@ button {
     /*TITLE*/
     .title.about,
     .title.contact,
-    .title.auth,
+    .title.signin,
     .title.history {
         font-size: 8em;
         font-weight: 400;
@@ -287,7 +288,7 @@ button {
 
     .theme.contact,
     .theme.about,
-    .theme.auth,
+    .theme.signin,
     .theme.history {
         font-size: 3em;
         position: relative;
@@ -297,7 +298,7 @@ button {
     /*NAVBAR*/
     ul.about,
     ul.contact,
-    ul.auth,
+    ul.signin,
     ul.history {
         font-size: 2.5em;
     }
@@ -349,7 +350,7 @@ button {
     /*MAIN CONTAINER*/
     .bg-glass.about,
     .bg-glass.contact,
-    .bg-glass.auth,
+    .bg-glass.signin,
     .bg-glass.history {
         width: 90%;
         height: 90vh;
@@ -358,7 +359,7 @@ button {
     /*TITLE*/
     .title.about,
     .title.contact,
-    .title.auth,
+    .title.signin,
     .title.history {
         font-size: 4em;
         font-weight: 400;
@@ -368,7 +369,7 @@ button {
 
     .theme.contact,
     .theme.about,
-    .theme.auth,
+    .theme.signin,
     .theme.history {
         font-size: 1.5em;
         position: relative;
@@ -378,14 +379,14 @@ button {
     /*NAVBAR*/
     nav.about,
     nav.contact,
-    nav.auth,
+    nav.signin,
     nav.history {
         display: none;
     }
 
     ul.about,
     ul.contact,
-    ul.auth,
+    ul.signin,
     ul.history {
         font-size: 1.5em;
         display: flex;
@@ -394,7 +395,7 @@ button {
 
     li.about,
     li.contact,
-    li.auth,
+    li.signin,
     li.history {
         margin: 0 0 0.5em 0;
     }
