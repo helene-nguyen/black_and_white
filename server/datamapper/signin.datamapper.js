@@ -4,17 +4,20 @@ const client = require('../database/db');
 const TABLE_NAME = "users";
 
 const signinDatamapper = {
-    async getAllInputNames(index) {
+    async getAllInputNames() {
 
         const sql = {
-            text: `SELECT * 
-            FROM ${TABLE_NAME}`
+            text: `SELECT 
+            "first_name", 
+            "last_name", 
+            "pseudo", 
+            "password"
+            FROM ${TABLE_NAME}
+            WHERE id = 1`
         };
         const result = await client.query(sql);
-        console.log(result.fields[index].name);
-        //TODO Try to have the array with only column names
-
-        return result.fields;
+           
+        return result.rows[0];
     },
 
     async addUser(userData) {

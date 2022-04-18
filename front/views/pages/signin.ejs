@@ -11,16 +11,13 @@
     <legend class="signin">
         Sign in
     </legend>
-    
-    <label class="first_name" for="first_name">First name</label>
-    <input type="text" id="first_name" name="first_name" placeholder="First name" required="required">
-    
-    <label class="last_name" for="last_name">Last name</label>
-    <input type="text" id="last_name" name="last_name" placeholder="Last name" required="required">
-    <label class="pseudo" for="pseudo">Pseudo</label>
-    <input type="text" id="pseudo" name="pseudo" placeholder="Pseudo" required="required">
-    <label class="password" for="password" >Password</label>
-    <input type="password" id="password" name="password" placeholder="Password" required="required">
+
+    <% for(let element in allInputNames){ %>
+
+    <label  for="<%= element %>"><%= allInputNames[element] %> </label>
+    <input type="text" id="<%= element  %>" name="<%= element  %>" placeholder="<%= allInputNames[element]  %>"
+        required="required">
+    <% } %>
 
     <button type="submit" class="btn sign-in">Submit</button>
 
