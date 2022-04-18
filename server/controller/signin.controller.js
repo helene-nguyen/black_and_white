@@ -10,11 +10,23 @@ const {
 
 //~controller
 const signinController = {
-    //add user
+    //&add user
     async addUser(req, res, next) {
         try {
             console.log(clc.bgGreen.black.bold('signin OK'));
-            console.log(req.body);
+            // console.log(req.body.first_name);
+            const userInfo = req.body;
+
+            //TODO uncomment below to insert
+            // const inserted = await addUser.add(userInfo);
+
+            if (inserted) {
+                res.render('pages/', {
+                    //TODO render new page or home page ? 
+                })
+            }
+
+
             next();
         } catch (err) {
             errorController._500(err, req, res);

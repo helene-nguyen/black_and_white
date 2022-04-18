@@ -34,6 +34,7 @@ const mainController = {
             const navElements = await mainDatamapper.findNavElements();
             const allInputNames = await getAllInputNames();
             console.log(allInputNames);
+            
 
             if (pageURL === pageInfo) {
                 res.render(`pages/${pageInfo}`, {

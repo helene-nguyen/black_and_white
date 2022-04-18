@@ -15,7 +15,8 @@
     <% for(let element in allInputNames){ %>
 
     <label  for="<%= element %>"><%= allInputNames[element] %> </label>
-    <input type="text" id="<%= element  %>" name="<%= element  %>" placeholder="<%= allInputNames[element]  %>"
+    <!--! CONDITION TO ADD ATT TEXT OR PWD -->
+    <input type="<%= element == 'password' ? `${element}` : 'text' %>" id="<%= element  %>" name="<%= element  %>" placeholder="<%= allInputNames[element]  %>"
         required="required">
     <% } %>
 

@@ -4,6 +4,7 @@ const client = require('../database/db');
 const TABLE_NAME = "users";
 
 const signinDatamapper = {
+    //&get input names
     async getAllInputNames() {
 
         const sql = {
@@ -19,7 +20,7 @@ const signinDatamapper = {
            
         return result.rows[0];
     },
-
+    //&add user
     async addUser(userData) {
 
         const {
