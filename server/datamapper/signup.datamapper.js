@@ -3,7 +3,7 @@ const client = require('../database/db');
 
 const TABLE_NAME = "users";
 
-const signinDatamapper = {
+const signupDatamapper = {
     //&get input names
     async getAllInputNames() {
 
@@ -17,7 +17,7 @@ const signinDatamapper = {
             WHERE id = 1`
         };
         const result = await client.query(sql);
-           
+
         return result.rows[0];
     },
     //&add user
@@ -29,28 +29,28 @@ const signinDatamapper = {
             pseudo,
             password
         } = userData;
-
-        const sql = { //! We create an object
+        //! We create an object
+        const sql = {
             text: ` INSERT INTO ${TABLE_NAME} (
                 "first_name",
                 "last_name",
                 "pseudo",
                 "password"
             )
-            VALUES ($1, $2, $3, $4) //! Protect DB
+            VALUES ($1, $2, $3, $4) 
             `,
             values: [
-                firstName,
-                lastName,
+                first_name,
+                last_name,
                 pseudo,
                 password
             ]
         }
-
+        //! Protect DB
         const result = await client.query(sql);
 
         return result.rowCount;
     }
 }
 
-module.exports = signinDatamapper;
+module.exports = signupDatamapper;

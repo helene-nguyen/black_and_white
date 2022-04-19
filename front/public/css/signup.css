@@ -1,6 +1,6 @@
 /**MAIN CONTAINER**/
 
-form#signin-form {
+form#signup-form {
     color: var(--pale-white);
     display: flex;
     flex-direction: column;
@@ -10,7 +10,7 @@ form#signin-form {
     width: 20em;
 }
 
-legend.signin {
+legend.signup {
     text-align: center;
     margin-bottom: 1em;
     font-size: 2em;
@@ -35,7 +35,7 @@ btn.sign-in {
 
 @media screen and (min-width:768px)  {
 
-    form#signin-form {
+    form#signup-form {
         font-size: 1em;
         margin: 1em 0 1em;
         padding: 2em 2em 1em;
@@ -57,7 +57,7 @@ btn.sign-in {
 }
 
 @media screen and (max-width: 768px) {
-    form#signin-form {
+    form#signup-form {
         font-size: 1em;
         margin: 1em 0 1em;
         padding: 2em 3em;

@@ -4,23 +4,21 @@ const errorController = require('./error.controller'),
 
 //~datamapper
 const mainDatamapper = require('../datamapper/main.datamapper');
-const signinDatamapper = require('../datamapper/signin.datamapper'),
-    {
-        getAllInputNames
-    } = signinDatamapper;
 
 //~controller
 const mainController = {
 
     async renderHomePage(req, res, next) {
+        console.log(clc.bgCyanBright.black(req.body.first_name));
+
         try {
             const navElements = await mainDatamapper.findNavElements();
             res.render('pages/home', {
                 navElements,
                 namePage: "home",
-                title: "Home"
+                title: "Home",
+                user: "test"
             });
-
         } catch (err) {
             errorController._500(err, req, res);
         }
@@ -32,22 +30,18 @@ const mainController = {
             const pageURL = req.url.substring(1)
             const pageInfo = req.params.name;
             const navElements = await mainDatamapper.findNavElements();
-            const allInputNames = await getAllInputNames();
-            console.log(allInputNames);
-            
 
             if (pageURL === pageInfo) {
                 res.render(`pages/${pageInfo}`, {
                     navElements,
                     namePage: pageInfo,
-                    title: pageInfo,
-                    allInputNames
+                    title: pageInfo
                 });
                 return;
-
             } else {
                 throw new Error('Aucune page trouvée !')
             }
+
 
         } catch (err) {
             errorController._500(err, res, res);

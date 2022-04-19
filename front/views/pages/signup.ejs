@@ -1,0 +1,27 @@
+<%- include ('../partials/boilerPlate')  %>
+
+<!-- CSS -->
+<link rel="stylesheet" href="/css/signup.css">
+
+<%- include ('../partials/header')  %>
+
+<%- include ('../partials/nav')  %>
+
+<form action="/" id="signup-form" method="post">
+    <legend class="signup">
+        Sign up
+    </legend>
+
+    <% for(let element in allInputNames){ %>
+
+    <label for="<%= element %>"><%= allInputNames[element] %> </label>
+    <!--! TERNARY OPERATION CONDITION TO ADD ATT TEXT OR PWD -->
+    <input type="<%= element == 'password' ? `${element}` : 'text' %>" minlength="<%= element == 'password' ? `8` : '' %>" id="<%= element  %>" name="<%= element  %>"
+        placeholder="<%= allInputNames[element]  %>" required="required">
+    <% } %>
+
+    <button type="submit" class="btn sign-in">Submit</button>
+
+</form>
+
+<%- include ('../partials/footer')  %>
