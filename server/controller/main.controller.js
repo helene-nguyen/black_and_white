@@ -4,20 +4,24 @@ const errorController = require('./error.controller'),
 
 //~datamapper
 const mainDatamapper = require('../datamapper/main.datamapper');
+const addUserInfo = require('./signup.controller');
+const { userInfo } = addUserInfo;
 
 //~controller
 const mainController = {
 
     async renderHomePage(req, res, next) {
-        console.log(clc.bgCyanBright.black(req.body.first_name));
-
+        
         try {
+            //!get first_name register in req.session on sign up controller
+            const { first_name } = req.session;
+
             const navElements = await mainDatamapper.findNavElements();
             res.render('pages/home', {
                 navElements,
                 namePage: "home",
                 title: "Home",
-                user: "test"
+                user: first_name
             });
         } catch (err) {
             errorController._500(err, req, res);
@@ -35,7 +39,8 @@ const mainController = {
                 res.render(`pages/${pageInfo}`, {
                     navElements,
                     namePage: pageInfo,
-                    title: pageInfo
+                    title: pageInfo,
+                    user:''
                 });
                 return;
             } else {

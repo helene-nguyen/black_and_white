@@ -10,7 +10,7 @@ const { renderHistoryPage } = historyController;
 
 //~router
 router.get('/', renderHomePage);
-router.post('/', addUserForm, renderHomePage); //TODO put here addUser
+router.post('/', addUserForm, renderHomePage);
 router.get('/:name', renderPages);
 router.post('/signup', rendersignupPage);
 router.post('/history', renderHistoryPage);

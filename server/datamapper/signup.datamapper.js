@@ -24,8 +24,8 @@ const signupDatamapper = {
     async addUser(userData) {
 
         const {
-            firstName,
-            lastName,
+            first_name,
+            last_name,
             pseudo,
             password
         } = userData;

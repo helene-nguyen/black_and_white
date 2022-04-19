@@ -1,7 +1,17 @@
 <%- include ('../partials/boilerPlate')  %>
 
-<%- include ('../partials/header')  %>
+<!-- CSS -->
+<link rel="stylesheet" href="/css/history.css">
 
+<%- include ('../partials/header')  %>
 <p class="history-title">History</p>
+<div class="history-container">
+
+    <% history.forEach((link) => { %>
+    <li><span class="history-span">You were here ➾</span><a class="history-link" href="<%= link %>"> <%= link %></a>
+    </li>
+    <% }) %>
+</div>
+
 
 <%- include ('../partials/footer')  %>

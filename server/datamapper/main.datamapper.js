@@ -18,7 +18,8 @@ const mainDatamapper = {
         const sql = {
             text: `SELECT * 
             FROM ${TABLE_NAME} 
-            WHERE "name" = ${name}`
+            WHERE "name" = $1`, //protect DB
+            values: [name]
         };
         const result = await client.query(sql);
 

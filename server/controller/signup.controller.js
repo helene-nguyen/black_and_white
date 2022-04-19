@@ -32,16 +32,19 @@ const signupController = {
     async addUserForm(req, res, next) {
         try {
             console.log(clc.bgGreen.black.bold('renderUser OK'));
-
             const userInfo = req.body;
-            console.log(userInfo);
-    
+            const userLogin = req.body.first_name;
+            //!register in req.session
+            req.session.first_name = userLogin;
+
             const inserted = await signupDatamapper.addUser(userInfo);
 
             if (inserted) {
                 res.redirect('/');
-                
-            } else throw new Error('Any profile have been created')
+                //TODO 
+            } else {
+                throw new Error('Any profile have been created')
+            }
 
         } catch (err) {
             errorController._500(err, req, res);

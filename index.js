@@ -16,10 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(__dirname + '/front/public'));
 //~session
 app.use(session({
-    secret: process.env.SESSION_SECRET, // le "secret" qui va être utilisé pour générer les tokens.
-    resave: true,// sauvegarde automatique de la session à la fin de la requête 
-    saveUninitialized: true,// sauvegarde de la session même si elle est vide ?
-    cookie: { // des options pour le cookie qui contient le token. cf npmjs.com/package/express-session
+    secret: process.env.SESSION_SECRET, // secret used for generating tokens
+    resave: true,// auto save session after request
+    saveUninitialized: true,// save session even if it's empty
+    cookie: { // options concerning cookie cf npmjs.com/package/express-session
     }
 }));
 //~ MW for history visited pages

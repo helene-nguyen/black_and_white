@@ -1,4 +1,14 @@
 /*Yumicode 2022 Black&White */
+/**import fonts**/
+@font-face {
+    font-family: 'Quicksand';
+    src: url(../fonts/Quicksand/Quicksand-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Homemade Apple';
+    src: url(../fonts/Homemade_Apple/HomemadeApple-Regular.ttf) format('truetype');
+}
 
 /**MAIN**/
 :root {
@@ -48,7 +58,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .bg-glass.home {
@@ -121,10 +131,8 @@ header {
     top: -1.5em;
 }
 
-.history-title {
-    font-size: 2em;
-    color: var(--light-grey);
-    margin: 0.5em auto;
+.welcome-user {
+    margin: 1em auto 2em;
 }
 
 /**NAVBAR**/
@@ -262,6 +270,10 @@ button {
     .btn {
         font-size: 2em;
         margin: 1em;
+    }
+
+    .welcome-user {
+        margin: 0.5em auto 1em;
     }
 
     /*************PAGES**********/
